@@ -1,0 +1,52 @@
+<script>
+
+//CRUD
+
+// const users = [];
+
+// const usersCreate = function(user) {
+//     users.push(user);
+//     return 'created';
+// }
+
+// const usersRead = function() {
+//     return users;
+// }
+
+// const usersDelete = function(index) {
+//     users.splice(index, 1);
+//     return 'deleted';
+// }
+
+// const usersUpdate = function(index,user) {
+//     users[index] = user;
+//     return 'updated';
+// }
+
+
+
+
+const users = [];
+
+//생성
+const usersCreate = function(user) {
+    users.push(user);
+    return 'Created';
+}
+//읽기
+const usersRead = function() {
+    return users;
+}
+//수정
+const usersUpdate = function(index,user) {
+    users[index] = user;
+    return 'Updated'
+}
+
+//삭제
+const usersDelete = function(index) {
+    users.splice(index,1);
+    return 'deleted';
+}
+
+</script>
