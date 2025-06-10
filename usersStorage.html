@@ -1,0 +1,42 @@
+<script>
+    // const users = [];
+    const usersGet = sessionStorage.getItem('users');
+    const usersLogical = usersGet || '[]';
+    const users = JSON.parse(usersLogical);
+
+    const usersSet = function() {
+        const usersSet = JSON.stringify(users);
+        sessionStorage.setItem('users', usersSet);
+    };
+
+    //생성
+    const usersCreate = function(user) {
+        users.push(user);
+        usersSet();
+        return '생성완료';
+    };
+    //usersCreate('이재명');
+
+    //읽기
+    const usersRead = function() {
+        return users;
+    };
+    //usersRead();
+
+    //업데이트
+    const usersUpdate = function(index,user) {
+        users[index] = user;
+        usersSet();
+        return '수정';
+    };
+    // usersUpdate(0,'문재인');
+
+    //삭제
+    const usersDelete = function(index) {
+        users.splice(index,1);
+        usersSet();
+        return '삭제';
+    };
+
+    // usersDelete(1);
+</script>

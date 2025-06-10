@@ -48,5 +48,13 @@
 // sessionStorage.removeItem('ss1');
 // sessionStorage.clear();
 
+const storageGet = sessionStorage.getItem('array2'); //const storageGet = null; 값을 못찾을 경우 null값으로 리턴
+const storageLogical = storageGet || '[1, 2, 3]';
+const array2 = JSON.parse(storageLogical); //parse는 ''를 제거해주는 역할
+const plus1 = array2.length + 1;
+array2.push(plus1);
+const storageSet = JSON.stringify(array2); //stringify는 다시 ''를 씌어 문자열로 변환
+sessionStorage.setItem('array2', storageSet);
+
 
 </script>
